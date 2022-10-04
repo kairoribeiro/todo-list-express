@@ -1,12 +1,11 @@
 import { Router } from 'express'
+import * as todosCtrl from '../controllers/todos.js'
 
 
 const router = Router()
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'My To-Do Express' })
-})
+router.get('/', todosCtrl.index)
 
 export { 
   router
