@@ -29,8 +29,20 @@ Todo.create(req.body)
 })
 }
 
+function deleteTodo(req, res) {
+Todo.findByIdAndDelete(req.params.id)
+.then(todo => {
+    res.redirect('/')
+})
+.catch(error => {
+    console.log(error);
+    res.redirect('/')
+})
+}
+
 export {
     index,
     newTodo as new,
     create,
+    deleteTodo as delete,
 }
