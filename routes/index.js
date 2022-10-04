@@ -7,6 +7,12 @@ const router = Router()
 /* GET home page. */
 router.get('/', todosCtrl.index)
 
+//GET localhost:3000/
+router.get('/', todosCtrl.new)
+
+//POST localhost:3000/
+router.post('/', todosCtrl.create)
+
 export { 
   router
 }
